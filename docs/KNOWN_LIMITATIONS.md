@@ -23,4 +23,4 @@ Truthcheck is a narrow offline verifier, not a general Stellar reconciliation sy
 
 The caller must supply complete ledger-close metadata from a trusted source. The ledger header commits the transaction set and results but not the apply-metadata event bytes directly. The AWS and OnFinality copies matched byte-for-byte for the preserved ledger, but may share upstream data or infrastructure.
 
-The selected license is Apache-2.0, matching WeighIn. The Go module path is `github.com/E-NNOV8/stellar-truthcheck`; public repository creation and hosted CI remain pending access to the E-NNOV8 organization.
+The selected license is Apache-2.0, matching WeighIn. The Go module path is `github.com/E-NNOV8/stellar-truthcheck`. The public GitHub Actions flagship proof passed for revision `18fe9f468ab990d87e8b694587f2488cf0e89a01`; that result does not establish CI status for later revisions.

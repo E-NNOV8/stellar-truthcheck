@@ -34,4 +34,4 @@ The flagship script checks the actual CLI process exit codes and parses its JSON
 - Do not describe the preserved source reproduction as a production Hubble export.
 - Do not add credentials or network calls to the offline verification path.
 
-No license has been selected. The owner must decide licensing before accepting contributions under public reuse terms.
+Truthcheck is licensed under Apache-2.0; see LICENSE.
