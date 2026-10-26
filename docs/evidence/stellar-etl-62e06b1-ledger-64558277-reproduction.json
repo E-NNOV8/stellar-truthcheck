@@ -1,0 +1,1364 @@
+{
+  "control": {
+    "kind": "successful_control",
+    "transaction_hash": "afbf759fa9317cc7a8e28812c8b5b0245e9d31e55e9e9d8cb6a72e5eb832d57d",
+    "transaction_index": 299,
+    "operation_index": 0,
+    "operation_type": "OperationTypeInvokeHostFunction",
+    "transaction_successful": true,
+    "transaction_result_code": "TransactionResultCodeTxFeeBumpInnerSuccess",
+    "fee_charged_stroops": "13163",
+    "transaction_meta_version": 4,
+    "apply_operation_meta_count": 1,
+    "diagnostic_event_count": 22,
+    "stellar_etl_operation_output": {
+      "source_account": "GCNOWLX3ICSI5JVM4M443Y2WGOTJROVQLRWOEXGOJ6GM6J4CLNJ4IEQA",
+      "type": 24,
+      "type_string": "invoke_host_function",
+      "details": {
+        "asset_balance_changes": [
+          {
+            "amount": "15.1300000",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "GCNOWLX3ICSI5JVM4M443Y2WGOTJROVQLRWOEXGOJ6GM6J4CLNJ4IEQA",
+            "to": "CCDCTXGN7FPCGSPV4PEVNZODDNHUMDQ3SAKFHYW6TCCDK3JXSX4UVS3Y",
+            "type": "transfer"
+          }
+        ],
+        "contract_code_hash": null,
+        "contract_id": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+        "function": "HostFunctionTypeHostFunctionTypeInvokeContract",
+        "ledger_key_hash": [
+          "e67aa35bb6c2f28a4b22d4fa5f51633ac1fa9c7642a58ee05a6c4afdfd89a93b",
+          "5e64f51f0e07a3443f5253bac1ea8ac417f86fc47634388be96a472f334bc6f0",
+          "591395f9209cf79c11155f05c5ca9db5043d01142ed8fb5260ef0517ccdc991d"
+        ],
+        "parameters": [
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg=="
+          },
+          {
+            "type": "Sym",
+            "value": "AAAADwAAAAh0cmFuc2Zlcg=="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAAAAAAAmusu+0Ckjqas4znN41Yzppi6sFxs4lzOT4zPJ4JbU8Q="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAGGKdzN+V4jSfXjyVblwxtPRg4bkBRT4t6YhDVtN5X5Sg=="
+          },
+          {
+            "type": "I128",
+            "value": "AAAACgAAAAAAAAAAAAAAAAkEp6A="
+          }
+        ],
+        "parameters_decoded": [
+          {
+            "type": "Address",
+            "value": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "type": "Sym",
+            "value": "transfer"
+          },
+          {
+            "type": "Address",
+            "value": "GCNOWLX3ICSI5JVM4M443Y2WGOTJROVQLRWOEXGOJ6GM6J4CLNJ4IEQA"
+          },
+          {
+            "type": "Address",
+            "value": "CCDCTXGN7FPCGSPV4PEVNZODDNHUMDQ3SAKFHYW6TCCDK3JXSX4UVS3Y"
+          },
+          {
+            "type": "I128",
+            "value": "151300000"
+          }
+        ],
+        "parameters_json": [
+          "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg==",
+          "AAAADwAAAAh0cmFuc2Zlcg==",
+          "AAAAEgAAAAAAAAAAmusu+0Ckjqas4znN41Yzppi6sFxs4lzOT4zPJ4JbU8Q=",
+          "AAAAEgAAAAGGKdzN+V4jSfXjyVblwxtPRg4bkBRT4t6YhDVtN5X5Sg==",
+          "AAAACgAAAAAAAAAAAAAAAAkEp6A="
+        ],
+        "parameters_json_decoded": [
+          {
+            "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "symbol": "transfer"
+          },
+          {
+            "address": "GCNOWLX3ICSI5JVM4M443Y2WGOTJROVQLRWOEXGOJ6GM6J4CLNJ4IEQA"
+          },
+          {
+            "address": "CCDCTXGN7FPCGSPV4PEVNZODDNHUMDQ3SAKFHYW6TCCDK3JXSX4UVS3Y"
+          },
+          {
+            "i128": "151300000"
+          }
+        ],
+        "type": "invoke_contract"
+      },
+      "transaction_id": 277275688402333696,
+      "id": 277275688402333697,
+      "closed_at": "2026-09-22T11:39:23Z",
+      "operation_result_code": "OperationResultCodeOpInner",
+      "operation_trace_code": "InvokeHostFunctionResultCodeInvokeHostFunctionSuccess",
+      "ledger_sequence": 64558277,
+      "details_json": {
+        "asset_balance_changes": [
+          {
+            "amount": "15.1300000",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "GCNOWLX3ICSI5JVM4M443Y2WGOTJROVQLRWOEXGOJ6GM6J4CLNJ4IEQA",
+            "to": "CCDCTXGN7FPCGSPV4PEVNZODDNHUMDQ3SAKFHYW6TCCDK3JXSX4UVS3Y",
+            "type": "transfer"
+          }
+        ],
+        "contract_code_hash": null,
+        "contract_id": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+        "function": "HostFunctionTypeHostFunctionTypeInvokeContract",
+        "ledger_key_hash": [
+          "e67aa35bb6c2f28a4b22d4fa5f51633ac1fa9c7642a58ee05a6c4afdfd89a93b",
+          "5e64f51f0e07a3443f5253bac1ea8ac417f86fc47634388be96a472f334bc6f0",
+          "591395f9209cf79c11155f05c5ca9db5043d01142ed8fb5260ef0517ccdc991d"
+        ],
+        "parameters": [
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg=="
+          },
+          {
+            "type": "Sym",
+            "value": "AAAADwAAAAh0cmFuc2Zlcg=="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAAAAAAAmusu+0Ckjqas4znN41Yzppi6sFxs4lzOT4zPJ4JbU8Q="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAGGKdzN+V4jSfXjyVblwxtPRg4bkBRT4t6YhDVtN5X5Sg=="
+          },
+          {
+            "type": "I128",
+            "value": "AAAACgAAAAAAAAAAAAAAAAkEp6A="
+          }
+        ],
+        "parameters_decoded": [
+          {
+            "type": "Address",
+            "value": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "type": "Sym",
+            "value": "transfer"
+          },
+          {
+            "type": "Address",
+            "value": "GCNOWLX3ICSI5JVM4M443Y2WGOTJROVQLRWOEXGOJ6GM6J4CLNJ4IEQA"
+          },
+          {
+            "type": "Address",
+            "value": "CCDCTXGN7FPCGSPV4PEVNZODDNHUMDQ3SAKFHYW6TCCDK3JXSX4UVS3Y"
+          },
+          {
+            "type": "I128",
+            "value": "151300000"
+          }
+        ],
+        "parameters_json": [
+          "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg==",
+          "AAAADwAAAAh0cmFuc2Zlcg==",
+          "AAAAEgAAAAAAAAAAmusu+0Ckjqas4znN41Yzppi6sFxs4lzOT4zPJ4JbU8Q=",
+          "AAAAEgAAAAGGKdzN+V4jSfXjyVblwxtPRg4bkBRT4t6YhDVtN5X5Sg==",
+          "AAAACgAAAAAAAAAAAAAAAAkEp6A="
+        ],
+        "parameters_json_decoded": [
+          {
+            "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "symbol": "transfer"
+          },
+          {
+            "address": "GCNOWLX3ICSI5JVM4M443Y2WGOTJROVQLRWOEXGOJ6GM6J4CLNJ4IEQA"
+          },
+          {
+            "address": "CCDCTXGN7FPCGSPV4PEVNZODDNHUMDQ3SAKFHYW6TCCDK3JXSX4UVS3Y"
+          },
+          {
+            "i128": "151300000"
+          }
+        ],
+        "type": "invoke_contract"
+      }
+    }
+  },
+  "ledger_close_meta_version": 2,
+  "ledger_sequence": 64558277,
+  "target": {
+    "kind": "failed_target",
+    "transaction_hash": "575f16436ec1d6eabfc8f66e2dec553e61b53ed85914b50736c842a0d567266b",
+    "transaction_index": 264,
+    "operation_index": 0,
+    "operation_type": "OperationTypeInvokeHostFunction",
+    "transaction_successful": false,
+    "transaction_result_code": "TransactionResultCodeTxFailed",
+    "fee_charged_stroops": "174334",
+    "transaction_meta_version": 4,
+    "apply_operation_meta_count": 0,
+    "diagnostic_event_count": 125,
+    "stellar_etl_operation_output": {
+      "source_account": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55",
+      "type": 24,
+      "type_string": "invoke_host_function",
+      "details": {
+        "asset_balance_changes": [
+          {
+            "amount": "427.2105923",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "376.5259100",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ",
+            "type": "transfer"
+          },
+          {
+            "amount": "378.7257536",
+            "asset_code": "sUSD",
+            "asset_issuer": "GCHW7CWI7GMIYQYFXMFJNJX5645XGWIINIAEQK3SABQO6CAYL5T7JYIH",
+            "asset_type": "credit_alphanum4",
+            "from": "CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "378.7257536",
+            "asset_code": "sUSD",
+            "asset_issuer": "GCHW7CWI7GMIYQYFXMFJNJX5645XGWIINIAEQK3SABQO6CAYL5T7JYIH",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC",
+            "type": "transfer"
+          },
+          {
+            "amount": "1032609.8364361",
+            "asset_code": "AQUA",
+            "asset_issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA",
+            "asset_type": "credit_alphanum4",
+            "from": "CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "1032609.8364361",
+            "asset_code": "AQUA",
+            "asset_issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S",
+            "type": "transfer"
+          },
+          {
+            "amount": "1784.3670020",
+            "asset_type": "native",
+            "from": "CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "50.6846823",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55",
+            "type": "transfer"
+          },
+          {
+            "amount": "1784.3670020",
+            "asset_type": "native",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55",
+            "type": "transfer"
+          }
+        ],
+        "contract_code_hash": null,
+        "contract_id": "CBZODJ6VSXUVU33ILDVWVRP5TCUZVORBS2ECGM2QMDYN2MQIREPXOCKW",
+        "function": "HostFunctionTypeHostFunctionTypeInvokeContract",
+        "ledger_key_hash": [
+          "12624af6f1dd2979ccd8c92fb9573d13cf55c4aaea730a21ca570fff6f0cbe02",
+          "a63213d713efb243ba64897692d711ef088e5d5719b392ca68030f36bcecb1a4",
+          "341254a0727368fa68e1c01e99ed3841d05707306aac906125f26ca12b047e15",
+          "1eec938caf3d83cd640302e5fb24830729f1855fb712cc7f24f79f8d392df912",
+          "3fb61e19b4ac25aeaf224fa4368bef49a5e81c984e69f86e41c33f27a3be448f",
+          "639ec635b1491889b9333aaba88ee3e4a7058ac42c5b104df0a6e16bebed6860",
+          "8398376e8cbb56ce993384e837da6224045618e639ebf4aad200c2502aa8fdf4",
+          "8dd09c353855149002e64456ccbac7e75b0a3393c58e371f9988be06cad15eba",
+          "db4d24ea2366782865006bd8d1c77bc7c755e04c395965d171afba797fa1f13d",
+          "b820ef20187449ea2c23bc57b9da2c4ea6d26de03d223fcf57e80bb6037cb116",
+          "91cb2ba7f4631734470bce15b2365eea78edfd6ed013795331b6aae989e4ad39",
+          "5025d6a63eab21ab53b303a2978265bee694b924c71ef3ba8ec510601068443f",
+          "e67aa35bb6c2f28a4b22d4fa5f51633ac1fa9c7642a58ee05a6c4afdfd89a93b",
+          "cdba53b91fed59dd10aaf953b8e238fb16fa74ca5bc407d732a06258340f5e5c",
+          "841a5bf7bbc107c04c7e5633df271ac6e8716834e32c052bba3cc7442c2307ef",
+          "fe8ee0b9c5b0df921236ac21e14e114c3384f87ac893b9d54e9053d856fd9d64",
+          "b9470660a092f9a939328923f7bac9c6a8e4dfdc48dbd7aa3d6a10353843cda3",
+          "cc5122fdec7d5b1a015000e5fe7c0cff9f38f4adb1f8b3ab224fcdf62cbdd58f",
+          "6f32e182b28523f25f9e2dd1abd6f5f9e0b9cc65aa0bcb626b16476d9736e891",
+          "db204c71341c32b53d087429750676dcb910e12d08dfb644d71f0651e8ca6c37",
+          "d33efb8a3fe195c3040c1c28ad70e708d48e317a4e5249bb90953d0b8d383560",
+          "4b5381937ff0e1830de63fa063f82a18bc0f8362705552bf5bf0ea8dc63d6990",
+          "4880322565f4660c95b29a22a5b4a6b45642de28c36c1e4cba00c3786d0a5f33",
+          "c21eef7d860738bb0996658cf275f281b26e3bff58f8f231bee9c01b83230132",
+          "868c90bfbfbfe07fa9b2431964d7f70e01da70d616b710f17470ac9883120317",
+          "f4a3a6c7ad75c5574646cde8c093a3967e2b4583a2b0f9c54e6acfb7245319b2",
+          "4d1ec675f062383270e1853b4eac1b326d3de6c994a99ed43d5879a2435fbf04",
+          "dcd20836424be06f9eb69f2761da9719eb17d8290f2af90fd451b3c9cf431f94",
+          "52c643d6c3e250d934ddeb58e31e547c65febf42d18cec6b301e69129a7826a8",
+          "196c74b4b11f63861b6e1a9a20e29fdb86c46069413adad4847c907dde4bcbce",
+          "3b798f05c99c81003622f48c042f196bf65ee92f8a8394e08dcb0ba0729c4e02",
+          "137c3c4c5289b49817fe3ee1566027b55ae0d1a3b4bdd7ccc1cc5cf330543b0f",
+          "29ab3fefb17f5d438ee250a8ecc8bf234c2bfd1a1f5532803e3a573f7514fdfb",
+          "93cecbaac33c07af38b5fa381d9ebccbefb025d7474239bcbd0f8c6ebb37c212",
+          "53aa088bfbd0af0b50da6643e0dc9f222e80026ec70867619d2f5f1ff171d9b1",
+          "08abdc45abe5cb2bd0026cf1b6902555cea343261b1e629cecbb37e30e69f2e8",
+          "3f2721e93c97e2a686abdef3946021e47c2e7b83076e94eb72a28fb36e99a7e9",
+          "3dd0067a4fc8c9d08434973b46af46e5df7735831189f36a288c59ab45fb6e45",
+          "65146c57aae1f31614bff35c0b63534e4907020c6b6df796b67777050d434b3c",
+          "6a6d9365d5786833296da63864af8493d60dcad1f90413ad1723766897c9eddd",
+          "5b998c21cfe669b1d58678fcc0b27c4a56cfd3e332bef0523a422d11b167a026",
+          "b32754e6f7aad1d4d2beef65617c6b396fdb7e1db2acfbd43606eae28c752345",
+          "8db4c840a8f61497caec7142a57cfab45da619e803ebf20f82375662cc9b53a5",
+          "d3de9763f5561c4f2e166afb4c6522066310ecf26f217a845145776a65ecee5d",
+          "72b0552a93e0ea758d106aa4bf302f01de25417c31a29715858db7cdf2abcbb9",
+          "257e4a827946f6f177215a810409525680aac4e0c70a24d5d43fce3ffba5a91b",
+          "dee837048ccd955770b1d4643777ac433c31ccd3d7f260ba1345b6fe8516c98a",
+          "4d2c6ec61b6ab53b98faf9c27541e1e5df3101dae42989d273925ffd58df516e",
+          "69098f82e1d1a34f80028e2465c3fef4187fb1178f39fe79eb3297620ec526dd",
+          "d17fd9e8513a7b3526c6f4158cc8c4abbedf11b89ae13be169bc1b73ba8fa1ae",
+          "d647eaefcae69ecb7b0aecf770c91b158eb45b0493e7482bbacfff1448480d9e",
+          "99059e59f5347d01e3f28f66e8ae288883c485865254dce0b101a47ee8b8e175"
+        ],
+        "parameters": [
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAFy4afVlelab2hY62rF/ZipmrohlogjM1Bg8N0yCIkfdw=="
+          },
+          {
+            "type": "Sym",
+            "value": "AAAADwAAAApzd2FwX3NwbGl0AAA="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg=="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAAAAAAAjfB8jGeBf8iWSF0Dsg4pc72QKUvZtG30pjsrXFwLd+U="
+          },
+          {
+            "type": "Vec",
+            "value": "AAAAEAAAAAEAAAACAAAAEQAAAAEAAAADAAAADwAAAAZhbW91bnQAAAAAAAoAAAAAAAAAAAAAAAAeNd5nAAAADwAAAANtaW4AAAAACgAAAAAAAAAAAAAAAI8oMiAAAAAPAAAABHBhdGgAAAAQAAAAAQAAAAMAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAG7z0ZLZ72N8FiA3LT093TbwW3w5Ch9lftiTuCutM2WTwAAAA8AAAACYmkAAAAAAAMAAAABAAAADwAAAARwb29sAAAAEgAAAAFtYRc0RgEbv1UsFB9Mw/bRXzxdM7gHee1+zmzY89bLMwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAAAAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABy5pWXcNXen6kap1BkccSTKg2tA2H9TG+J/MXKfh5VxoAAAAPAAAAAmJpAAAAAAADAAAAAQAAAA8AAAAEcG9vbAAAABIAAAABfe7KsznU/F+LpKeKG7PWrMGSbbWVeIyS2j/GgHk3pIAAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAAAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAJiaQAAAAAAAwAAAAAAAAAPAAAABHBvb2wAAAASAAAAAQWwUPsG8iAETnjFeqbyQvv7HA81HzUBzJNKsFSfE95mAAAADwAAAAhwcm90b2NvbAAAAAMAAAABAAAADwAAAAJzaQAAAAAAAwAAAAEAAAARAAAAAQAAAAMAAAAPAAAABmFtb3VudAAAAAAACgAAAAAAAAAAAAAAAOBtS1wAAAAPAAAAA21pbgAAAAAKAAAAAAAAAAAAAAAEJ3vJLwAAAA8AAAAEcGF0aAAAABAAAAABAAAAAwAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAAcuaVl3DV3p+pGqdQZHHEkyoNrQNh/UxvifzFyn4eVcaAAAADwAAAAJiaQAAAAAAAwAAAAEAAAAPAAAABHBvb2wAAAASAAAAAWvl5AFwExudaCKQudgvFoF14rHgjGerMNvsnsCzei0rAAAADwAAAAhwcm90b2NvbAAAAAMAAAAGAAAADwAAAAJzaQAAAAAAAwAAAAAAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAEohS9owZhIjjRvsSEu1QKQU3Ycwk9FM5LjU5ggGwgl5wAAAA8AAAACYmkAAAAAAAMAAAAAAAAADwAAAARwb29sAAAAEgAAAAH/xI0oiFglPR1dei4D6+NQ8S07q6uELKW5dzlMC3uXjwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAABAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABJbT82FmuwvpjSEOMSJs8PBDJi20hvk/TyzDLaJU++XcAAAAPAAAAAmJpAAAAAAADAAAAAAAAAA8AAAAEcG9vbAAAABIAAAABOHnluNRDmxIE6YLGxJlhYvBmVU+cZ4vz3Vn2ninBQVQAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAQ=="
+          },
+          {
+            "type": "I128",
+            "value": "AAAACgAAAAAAAAAAAAAAAI8oMiA="
+          },
+          {
+            "type": "U32",
+            "value": "AAAAAwAAADg="
+          },
+          {
+            "type": "U32",
+            "value": "AAAAAwPZFMU="
+          }
+        ],
+        "parameters_decoded": [
+          {
+            "type": "Address",
+            "value": "CBZODJ6VSXUVU33ILDVWVRP5TCUZVORBS2ECGM2QMDYN2MQIREPXOCKW"
+          },
+          {
+            "type": "Sym",
+            "value": "swap_split"
+          },
+          {
+            "type": "Address",
+            "value": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "type": "Address",
+            "value": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55"
+          },
+          {
+            "type": "Vec",
+            "value": "[[{amount 506846823} {min 2401776160} {path [[{asset CC546RSLM66Y34CYQDOLJ5HXOTN4C3PQ4QUH3FP3MJHOBLVUZWLE6JGG} {bi 1} {pool CBWWCFZUIYARXP2VFQKB6TGD63IV6PC5GO4AO6PNP3HGZWHT23FTHMGC} {protocol 6} {si 0}] [{asset CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG} {bi 1} {pool CB665SVTHHKPYX4LUSTYUG5T22WMDETNWWKXRDES3I74NADZG6SIBP5F} {protocol 6} {si 0}] [{asset CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA} {bi 0} {pool CAC3AUH3A3ZCABCOPDCXVJXSIL57WHAPGUPTKAOMSNFLAVE7CPPGNGZB} {protocol 1} {si 1}]]}] [{amount 3765259100} {min 17842293039} {path [[{asset CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG} {bi 1} {pool CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ} {protocol 6} {si 0}] [{asset CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK} {bi 0} {pool CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC} {protocol 6} {si 1}] [{asset CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA} {bi 0} {pool CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S} {protocol 6} {si 1}]]}]]"
+          },
+          {
+            "type": "I128",
+            "value": "2401776160"
+          },
+          {
+            "type": "U32",
+            "value": "56"
+          },
+          {
+            "type": "U32",
+            "value": "64558277"
+          }
+        ],
+        "parameters_json": [
+          "AAAAEgAAAAFy4afVlelab2hY62rF/ZipmrohlogjM1Bg8N0yCIkfdw==",
+          "AAAADwAAAApzd2FwX3NwbGl0AAA=",
+          "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg==",
+          "AAAAEgAAAAAAAAAAjfB8jGeBf8iWSF0Dsg4pc72QKUvZtG30pjsrXFwLd+U=",
+          "AAAAEAAAAAEAAAACAAAAEQAAAAEAAAADAAAADwAAAAZhbW91bnQAAAAAAAoAAAAAAAAAAAAAAAAeNd5nAAAADwAAAANtaW4AAAAACgAAAAAAAAAAAAAAAI8oMiAAAAAPAAAABHBhdGgAAAAQAAAAAQAAAAMAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAG7z0ZLZ72N8FiA3LT093TbwW3w5Ch9lftiTuCutM2WTwAAAA8AAAACYmkAAAAAAAMAAAABAAAADwAAAARwb29sAAAAEgAAAAFtYRc0RgEbv1UsFB9Mw/bRXzxdM7gHee1+zmzY89bLMwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAAAAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABy5pWXcNXen6kap1BkccSTKg2tA2H9TG+J/MXKfh5VxoAAAAPAAAAAmJpAAAAAAADAAAAAQAAAA8AAAAEcG9vbAAAABIAAAABfe7KsznU/F+LpKeKG7PWrMGSbbWVeIyS2j/GgHk3pIAAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAAAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAJiaQAAAAAAAwAAAAAAAAAPAAAABHBvb2wAAAASAAAAAQWwUPsG8iAETnjFeqbyQvv7HA81HzUBzJNKsFSfE95mAAAADwAAAAhwcm90b2NvbAAAAAMAAAABAAAADwAAAAJzaQAAAAAAAwAAAAEAAAARAAAAAQAAAAMAAAAPAAAABmFtb3VudAAAAAAACgAAAAAAAAAAAAAAAOBtS1wAAAAPAAAAA21pbgAAAAAKAAAAAAAAAAAAAAAEJ3vJLwAAAA8AAAAEcGF0aAAAABAAAAABAAAAAwAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAAcuaVl3DV3p+pGqdQZHHEkyoNrQNh/UxvifzFyn4eVcaAAAADwAAAAJiaQAAAAAAAwAAAAEAAAAPAAAABHBvb2wAAAASAAAAAWvl5AFwExudaCKQudgvFoF14rHgjGerMNvsnsCzei0rAAAADwAAAAhwcm90b2NvbAAAAAMAAAAGAAAADwAAAAJzaQAAAAAAAwAAAAAAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAEohS9owZhIjjRvsSEu1QKQU3Ycwk9FM5LjU5ggGwgl5wAAAA8AAAACYmkAAAAAAAMAAAAAAAAADwAAAARwb29sAAAAEgAAAAH/xI0oiFglPR1dei4D6+NQ8S07q6uELKW5dzlMC3uXjwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAABAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABJbT82FmuwvpjSEOMSJs8PBDJi20hvk/TyzDLaJU++XcAAAAPAAAAAmJpAAAAAAADAAAAAAAAAA8AAAAEcG9vbAAAABIAAAABOHnluNRDmxIE6YLGxJlhYvBmVU+cZ4vz3Vn2ninBQVQAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAQ==",
+          "AAAACgAAAAAAAAAAAAAAAI8oMiA=",
+          "AAAAAwAAADg=",
+          "AAAAAwPZFMU="
+        ],
+        "parameters_json_decoded": [
+          {
+            "address": "CBZODJ6VSXUVU33ILDVWVRP5TCUZVORBS2ECGM2QMDYN2MQIREPXOCKW"
+          },
+          {
+            "symbol": "swap_split"
+          },
+          {
+            "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "address": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55"
+          },
+          {
+            "vec": [
+              {
+                "map": [
+                  {
+                    "key": {
+                      "symbol": "amount"
+                    },
+                    "val": {
+                      "i128": "506846823"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "min"
+                    },
+                    "val": {
+                      "i128": "2401776160"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "path"
+                    },
+                    "val": {
+                      "vec": [
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CC546RSLM66Y34CYQDOLJ5HXOTN4C3PQ4QUH3FP3MJHOBLVUZWLE6JGG"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CBWWCFZUIYARXP2VFQKB6TGD63IV6PC5GO4AO6PNP3HGZWHT23FTHMGC"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CB665SVTHHKPYX4LUSTYUG5T22WMDETNWWKXRDES3I74NADZG6SIBP5F"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CAC3AUH3A3ZCABCOPDCXVJXSIL57WHAPGUPTKAOMSNFLAVE7CPPGNGZB"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "map": [
+                  {
+                    "key": {
+                      "symbol": "amount"
+                    },
+                    "val": {
+                      "i128": "3765259100"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "min"
+                    },
+                    "val": {
+                      "i128": "17842293039"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "path"
+                    },
+                    "val": {
+                      "vec": [
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "i128": "2401776160"
+          },
+          {
+            "u32": 56
+          },
+          {
+            "u32": 64558277
+          }
+        ],
+        "type": "invoke_contract"
+      },
+      "transaction_id": 277275688402190336,
+      "id": 277275688402190337,
+      "closed_at": "2026-09-22T11:39:23Z",
+      "operation_result_code": "OperationResultCodeOpInner",
+      "operation_trace_code": "InvokeHostFunctionResultCodeInvokeHostFunctionResourceLimitExceeded",
+      "ledger_sequence": 64558277,
+      "details_json": {
+        "asset_balance_changes": [
+          {
+            "amount": "427.2105923",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "376.5259100",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ",
+            "type": "transfer"
+          },
+          {
+            "amount": "378.7257536",
+            "asset_code": "sUSD",
+            "asset_issuer": "GCHW7CWI7GMIYQYFXMFJNJX5645XGWIINIAEQK3SABQO6CAYL5T7JYIH",
+            "asset_type": "credit_alphanum4",
+            "from": "CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "378.7257536",
+            "asset_code": "sUSD",
+            "asset_issuer": "GCHW7CWI7GMIYQYFXMFJNJX5645XGWIINIAEQK3SABQO6CAYL5T7JYIH",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC",
+            "type": "transfer"
+          },
+          {
+            "amount": "1032609.8364361",
+            "asset_code": "AQUA",
+            "asset_issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA",
+            "asset_type": "credit_alphanum4",
+            "from": "CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "1032609.8364361",
+            "asset_code": "AQUA",
+            "asset_issuer": "GBNZILSTVQZ4R7IKQDGHYGY2QXL5QOFJYQMXPKWRRM5PAV7Y4M67AQUA",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S",
+            "type": "transfer"
+          },
+          {
+            "amount": "1784.3670020",
+            "asset_type": "native",
+            "from": "CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S",
+            "to": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "type": "transfer"
+          },
+          {
+            "amount": "50.6846823",
+            "asset_code": "USDC",
+            "asset_issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN",
+            "asset_type": "credit_alphanum4",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55",
+            "type": "transfer"
+          },
+          {
+            "amount": "1784.3670020",
+            "asset_type": "native",
+            "from": "CBH6DLNVXBW5NMW5BT6Y7YAMFFCJ6WJ6P6KVLENM4PBTD5HFRE2EPRXS",
+            "to": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55",
+            "type": "transfer"
+          }
+        ],
+        "contract_code_hash": null,
+        "contract_id": "CBZODJ6VSXUVU33ILDVWVRP5TCUZVORBS2ECGM2QMDYN2MQIREPXOCKW",
+        "function": "HostFunctionTypeHostFunctionTypeInvokeContract",
+        "ledger_key_hash": [
+          "12624af6f1dd2979ccd8c92fb9573d13cf55c4aaea730a21ca570fff6f0cbe02",
+          "a63213d713efb243ba64897692d711ef088e5d5719b392ca68030f36bcecb1a4",
+          "341254a0727368fa68e1c01e99ed3841d05707306aac906125f26ca12b047e15",
+          "1eec938caf3d83cd640302e5fb24830729f1855fb712cc7f24f79f8d392df912",
+          "3fb61e19b4ac25aeaf224fa4368bef49a5e81c984e69f86e41c33f27a3be448f",
+          "639ec635b1491889b9333aaba88ee3e4a7058ac42c5b104df0a6e16bebed6860",
+          "8398376e8cbb56ce993384e837da6224045618e639ebf4aad200c2502aa8fdf4",
+          "8dd09c353855149002e64456ccbac7e75b0a3393c58e371f9988be06cad15eba",
+          "db4d24ea2366782865006bd8d1c77bc7c755e04c395965d171afba797fa1f13d",
+          "b820ef20187449ea2c23bc57b9da2c4ea6d26de03d223fcf57e80bb6037cb116",
+          "91cb2ba7f4631734470bce15b2365eea78edfd6ed013795331b6aae989e4ad39",
+          "5025d6a63eab21ab53b303a2978265bee694b924c71ef3ba8ec510601068443f",
+          "e67aa35bb6c2f28a4b22d4fa5f51633ac1fa9c7642a58ee05a6c4afdfd89a93b",
+          "cdba53b91fed59dd10aaf953b8e238fb16fa74ca5bc407d732a06258340f5e5c",
+          "841a5bf7bbc107c04c7e5633df271ac6e8716834e32c052bba3cc7442c2307ef",
+          "fe8ee0b9c5b0df921236ac21e14e114c3384f87ac893b9d54e9053d856fd9d64",
+          "b9470660a092f9a939328923f7bac9c6a8e4dfdc48dbd7aa3d6a10353843cda3",
+          "cc5122fdec7d5b1a015000e5fe7c0cff9f38f4adb1f8b3ab224fcdf62cbdd58f",
+          "6f32e182b28523f25f9e2dd1abd6f5f9e0b9cc65aa0bcb626b16476d9736e891",
+          "db204c71341c32b53d087429750676dcb910e12d08dfb644d71f0651e8ca6c37",
+          "d33efb8a3fe195c3040c1c28ad70e708d48e317a4e5249bb90953d0b8d383560",
+          "4b5381937ff0e1830de63fa063f82a18bc0f8362705552bf5bf0ea8dc63d6990",
+          "4880322565f4660c95b29a22a5b4a6b45642de28c36c1e4cba00c3786d0a5f33",
+          "c21eef7d860738bb0996658cf275f281b26e3bff58f8f231bee9c01b83230132",
+          "868c90bfbfbfe07fa9b2431964d7f70e01da70d616b710f17470ac9883120317",
+          "f4a3a6c7ad75c5574646cde8c093a3967e2b4583a2b0f9c54e6acfb7245319b2",
+          "4d1ec675f062383270e1853b4eac1b326d3de6c994a99ed43d5879a2435fbf04",
+          "dcd20836424be06f9eb69f2761da9719eb17d8290f2af90fd451b3c9cf431f94",
+          "52c643d6c3e250d934ddeb58e31e547c65febf42d18cec6b301e69129a7826a8",
+          "196c74b4b11f63861b6e1a9a20e29fdb86c46069413adad4847c907dde4bcbce",
+          "3b798f05c99c81003622f48c042f196bf65ee92f8a8394e08dcb0ba0729c4e02",
+          "137c3c4c5289b49817fe3ee1566027b55ae0d1a3b4bdd7ccc1cc5cf330543b0f",
+          "29ab3fefb17f5d438ee250a8ecc8bf234c2bfd1a1f5532803e3a573f7514fdfb",
+          "93cecbaac33c07af38b5fa381d9ebccbefb025d7474239bcbd0f8c6ebb37c212",
+          "53aa088bfbd0af0b50da6643e0dc9f222e80026ec70867619d2f5f1ff171d9b1",
+          "08abdc45abe5cb2bd0026cf1b6902555cea343261b1e629cecbb37e30e69f2e8",
+          "3f2721e93c97e2a686abdef3946021e47c2e7b83076e94eb72a28fb36e99a7e9",
+          "3dd0067a4fc8c9d08434973b46af46e5df7735831189f36a288c59ab45fb6e45",
+          "65146c57aae1f31614bff35c0b63534e4907020c6b6df796b67777050d434b3c",
+          "6a6d9365d5786833296da63864af8493d60dcad1f90413ad1723766897c9eddd",
+          "5b998c21cfe669b1d58678fcc0b27c4a56cfd3e332bef0523a422d11b167a026",
+          "b32754e6f7aad1d4d2beef65617c6b396fdb7e1db2acfbd43606eae28c752345",
+          "8db4c840a8f61497caec7142a57cfab45da619e803ebf20f82375662cc9b53a5",
+          "d3de9763f5561c4f2e166afb4c6522066310ecf26f217a845145776a65ecee5d",
+          "72b0552a93e0ea758d106aa4bf302f01de25417c31a29715858db7cdf2abcbb9",
+          "257e4a827946f6f177215a810409525680aac4e0c70a24d5d43fce3ffba5a91b",
+          "dee837048ccd955770b1d4643777ac433c31ccd3d7f260ba1345b6fe8516c98a",
+          "4d2c6ec61b6ab53b98faf9c27541e1e5df3101dae42989d273925ffd58df516e",
+          "69098f82e1d1a34f80028e2465c3fef4187fb1178f39fe79eb3297620ec526dd",
+          "d17fd9e8513a7b3526c6f4158cc8c4abbedf11b89ae13be169bc1b73ba8fa1ae",
+          "d647eaefcae69ecb7b0aecf770c91b158eb45b0493e7482bbacfff1448480d9e",
+          "99059e59f5347d01e3f28f66e8ae288883c485865254dce0b101a47ee8b8e175"
+        ],
+        "parameters": [
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAFy4afVlelab2hY62rF/ZipmrohlogjM1Bg8N0yCIkfdw=="
+          },
+          {
+            "type": "Sym",
+            "value": "AAAADwAAAApzd2FwX3NwbGl0AAA="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg=="
+          },
+          {
+            "type": "Address",
+            "value": "AAAAEgAAAAAAAAAAjfB8jGeBf8iWSF0Dsg4pc72QKUvZtG30pjsrXFwLd+U="
+          },
+          {
+            "type": "Vec",
+            "value": "AAAAEAAAAAEAAAACAAAAEQAAAAEAAAADAAAADwAAAAZhbW91bnQAAAAAAAoAAAAAAAAAAAAAAAAeNd5nAAAADwAAAANtaW4AAAAACgAAAAAAAAAAAAAAAI8oMiAAAAAPAAAABHBhdGgAAAAQAAAAAQAAAAMAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAG7z0ZLZ72N8FiA3LT093TbwW3w5Ch9lftiTuCutM2WTwAAAA8AAAACYmkAAAAAAAMAAAABAAAADwAAAARwb29sAAAAEgAAAAFtYRc0RgEbv1UsFB9Mw/bRXzxdM7gHee1+zmzY89bLMwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAAAAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABy5pWXcNXen6kap1BkccSTKg2tA2H9TG+J/MXKfh5VxoAAAAPAAAAAmJpAAAAAAADAAAAAQAAAA8AAAAEcG9vbAAAABIAAAABfe7KsznU/F+LpKeKG7PWrMGSbbWVeIyS2j/GgHk3pIAAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAAAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAJiaQAAAAAAAwAAAAAAAAAPAAAABHBvb2wAAAASAAAAAQWwUPsG8iAETnjFeqbyQvv7HA81HzUBzJNKsFSfE95mAAAADwAAAAhwcm90b2NvbAAAAAMAAAABAAAADwAAAAJzaQAAAAAAAwAAAAEAAAARAAAAAQAAAAMAAAAPAAAABmFtb3VudAAAAAAACgAAAAAAAAAAAAAAAOBtS1wAAAAPAAAAA21pbgAAAAAKAAAAAAAAAAAAAAAEJ3vJLwAAAA8AAAAEcGF0aAAAABAAAAABAAAAAwAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAAcuaVl3DV3p+pGqdQZHHEkyoNrQNh/UxvifzFyn4eVcaAAAADwAAAAJiaQAAAAAAAwAAAAEAAAAPAAAABHBvb2wAAAASAAAAAWvl5AFwExudaCKQudgvFoF14rHgjGerMNvsnsCzei0rAAAADwAAAAhwcm90b2NvbAAAAAMAAAAGAAAADwAAAAJzaQAAAAAAAwAAAAAAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAEohS9owZhIjjRvsSEu1QKQU3Ycwk9FM5LjU5ggGwgl5wAAAA8AAAACYmkAAAAAAAMAAAAAAAAADwAAAARwb29sAAAAEgAAAAH/xI0oiFglPR1dei4D6+NQ8S07q6uELKW5dzlMC3uXjwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAABAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABJbT82FmuwvpjSEOMSJs8PBDJi20hvk/TyzDLaJU++XcAAAAPAAAAAmJpAAAAAAADAAAAAAAAAA8AAAAEcG9vbAAAABIAAAABOHnluNRDmxIE6YLGxJlhYvBmVU+cZ4vz3Vn2ninBQVQAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAQ=="
+          },
+          {
+            "type": "I128",
+            "value": "AAAACgAAAAAAAAAAAAAAAI8oMiA="
+          },
+          {
+            "type": "U32",
+            "value": "AAAAAwAAADg="
+          },
+          {
+            "type": "U32",
+            "value": "AAAAAwPZFMU="
+          }
+        ],
+        "parameters_decoded": [
+          {
+            "type": "Address",
+            "value": "CBZODJ6VSXUVU33ILDVWVRP5TCUZVORBS2ECGM2QMDYN2MQIREPXOCKW"
+          },
+          {
+            "type": "Sym",
+            "value": "swap_split"
+          },
+          {
+            "type": "Address",
+            "value": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "type": "Address",
+            "value": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55"
+          },
+          {
+            "type": "Vec",
+            "value": "[[{amount 506846823} {min 2401776160} {path [[{asset CC546RSLM66Y34CYQDOLJ5HXOTN4C3PQ4QUH3FP3MJHOBLVUZWLE6JGG} {bi 1} {pool CBWWCFZUIYARXP2VFQKB6TGD63IV6PC5GO4AO6PNP3HGZWHT23FTHMGC} {protocol 6} {si 0}] [{asset CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG} {bi 1} {pool CB665SVTHHKPYX4LUSTYUG5T22WMDETNWWKXRDES3I74NADZG6SIBP5F} {protocol 6} {si 0}] [{asset CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA} {bi 0} {pool CAC3AUH3A3ZCABCOPDCXVJXSIL57WHAPGUPTKAOMSNFLAVE7CPPGNGZB} {protocol 1} {si 1}]]}] [{amount 3765259100} {min 17842293039} {path [[{asset CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG} {bi 1} {pool CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ} {protocol 6} {si 0}] [{asset CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK} {bi 0} {pool CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC} {protocol 6} {si 1}] [{asset CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA} {bi 0} {pool CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S} {protocol 6} {si 1}]]}]]"
+          },
+          {
+            "type": "I128",
+            "value": "2401776160"
+          },
+          {
+            "type": "U32",
+            "value": "56"
+          },
+          {
+            "type": "U32",
+            "value": "64558277"
+          }
+        ],
+        "parameters_json": [
+          "AAAAEgAAAAFy4afVlelab2hY62rF/ZipmrohlogjM1Bg8N0yCIkfdw==",
+          "AAAADwAAAApzd2FwX3NwbGl0AAA=",
+          "AAAAEgAAAAGt785ZruUpaPdgYdSUwlJbdWWfpClqZfSZ7ynlZHfklg==",
+          "AAAAEgAAAAAAAAAAjfB8jGeBf8iWSF0Dsg4pc72QKUvZtG30pjsrXFwLd+U=",
+          "AAAAEAAAAAEAAAACAAAAEQAAAAEAAAADAAAADwAAAAZhbW91bnQAAAAAAAoAAAAAAAAAAAAAAAAeNd5nAAAADwAAAANtaW4AAAAACgAAAAAAAAAAAAAAAI8oMiAAAAAPAAAABHBhdGgAAAAQAAAAAQAAAAMAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAG7z0ZLZ72N8FiA3LT093TbwW3w5Ch9lftiTuCutM2WTwAAAA8AAAACYmkAAAAAAAMAAAABAAAADwAAAARwb29sAAAAEgAAAAFtYRc0RgEbv1UsFB9Mw/bRXzxdM7gHee1+zmzY89bLMwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAAAAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABy5pWXcNXen6kap1BkccSTKg2tA2H9TG+J/MXKfh5VxoAAAAPAAAAAmJpAAAAAAADAAAAAQAAAA8AAAAEcG9vbAAAABIAAAABfe7KsznU/F+LpKeKG7PWrMGSbbWVeIyS2j/GgHk3pIAAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAAAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAJiaQAAAAAAAwAAAAAAAAAPAAAABHBvb2wAAAASAAAAAQWwUPsG8iAETnjFeqbyQvv7HA81HzUBzJNKsFSfE95mAAAADwAAAAhwcm90b2NvbAAAAAMAAAABAAAADwAAAAJzaQAAAAAAAwAAAAEAAAARAAAAAQAAAAMAAAAPAAAABmFtb3VudAAAAAAACgAAAAAAAAAAAAAAAOBtS1wAAAAPAAAAA21pbgAAAAAKAAAAAAAAAAAAAAAEJ3vJLwAAAA8AAAAEcGF0aAAAABAAAAABAAAAAwAAABEAAAABAAAABQAAAA8AAAAFYXNzZXQAAAAAAAASAAAAAcuaVl3DV3p+pGqdQZHHEkyoNrQNh/UxvifzFyn4eVcaAAAADwAAAAJiaQAAAAAAAwAAAAEAAAAPAAAABHBvb2wAAAASAAAAAWvl5AFwExudaCKQudgvFoF14rHgjGerMNvsnsCzei0rAAAADwAAAAhwcm90b2NvbAAAAAMAAAAGAAAADwAAAAJzaQAAAAAAAwAAAAAAAAARAAAAAQAAAAUAAAAPAAAABWFzc2V0AAAAAAAAEgAAAAEohS9owZhIjjRvsSEu1QKQU3Ycwk9FM5LjU5ggGwgl5wAAAA8AAAACYmkAAAAAAAMAAAAAAAAADwAAAARwb29sAAAAEgAAAAH/xI0oiFglPR1dei4D6+NQ8S07q6uELKW5dzlMC3uXjwAAAA8AAAAIcHJvdG9jb2wAAAADAAAABgAAAA8AAAACc2kAAAAAAAMAAAABAAAAEQAAAAEAAAAFAAAADwAAAAVhc3NldAAAAAAAABIAAAABJbT82FmuwvpjSEOMSJs8PBDJi20hvk/TyzDLaJU++XcAAAAPAAAAAmJpAAAAAAADAAAAAAAAAA8AAAAEcG9vbAAAABIAAAABOHnluNRDmxIE6YLGxJlhYvBmVU+cZ4vz3Vn2ninBQVQAAAAPAAAACHByb3RvY29sAAAAAwAAAAYAAAAPAAAAAnNpAAAAAAADAAAAAQ==",
+          "AAAACgAAAAAAAAAAAAAAAI8oMiA=",
+          "AAAAAwAAADg=",
+          "AAAAAwPZFMU="
+        ],
+        "parameters_json_decoded": [
+          {
+            "address": "CBZODJ6VSXUVU33ILDVWVRP5TCUZVORBS2ECGM2QMDYN2MQIREPXOCKW"
+          },
+          {
+            "symbol": "swap_split"
+          },
+          {
+            "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+          },
+          {
+            "address": "GCG7A7EMM6AX7SEWJBOQHMQOFFZ33EBJJPM3I3PUUY5SWXC4BN36KA55"
+          },
+          {
+            "vec": [
+              {
+                "map": [
+                  {
+                    "key": {
+                      "symbol": "amount"
+                    },
+                    "val": {
+                      "i128": "506846823"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "min"
+                    },
+                    "val": {
+                      "i128": "2401776160"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "path"
+                    },
+                    "val": {
+                      "vec": [
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CC546RSLM66Y34CYQDOLJ5HXOTN4C3PQ4QUH3FP3MJHOBLVUZWLE6JGG"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CBWWCFZUIYARXP2VFQKB6TGD63IV6PC5GO4AO6PNP3HGZWHT23FTHMGC"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CB665SVTHHKPYX4LUSTYUG5T22WMDETNWWKXRDES3I74NADZG6SIBP5F"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CAC3AUH3A3ZCABCOPDCXVJXSIL57WHAPGUPTKAOMSNFLAVE7CPPGNGZB"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "map": [
+                  {
+                    "key": {
+                      "symbol": "amount"
+                    },
+                    "val": {
+                      "i128": "3765259100"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "min"
+                    },
+                    "val": {
+                      "i128": "17842293039"
+                    }
+                  },
+                  {
+                    "key": {
+                      "symbol": "path"
+                    },
+                    "val": {
+                      "vec": [
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CDFZUVS5YNLXU7VENKOUDEOHCJGKQNVUBWD7KMN6E7ZROKPYPFLRUJFG"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CBV6LZABOAJRXHLIEKILTWBPC2AXLYVR4CGGPKZQ3PWJ5QFTPIWSWGWQ"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CD74JDJIRBMCKPI5LV5C4A7L4NIPCLJ3VOVYILFFXF3TSTALPOLY7CHC"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "asset"
+                              },
+                              "val": {
+                                "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "bi"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "pool"
+                              },
+                              "val": {
+                                "address": "CA4HTZNY2RBZWEQE5GBMNREZMFRPAZSVJ6OGPC7T3VM7NHRJYFAVID2S"
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "protocol"
+                              },
+                              "val": {
+                                "u32": 6
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "si"
+                              },
+                              "val": {
+                                "u32": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "i128": "2401776160"
+          },
+          {
+            "u32": 56
+          },
+          {
+            "u32": 64558277
+          }
+        ],
+        "type": "invoke_contract"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# Local project-planning material; never publish these workspace files.
+/.codex/
+/MASTER_PROJECT_CONTEXT.md
+/REPO_IDEA_TO_APPROVAL_PLAYBOOK.md
+/DRIPS_PROJECT_CONTEXT.md
+/PROJECT_EVALUATION_RUBRIC.md
+/STAGE2_USAGE.md
+
+# Local build artifacts.
+/bin/
+/dist/
+/truthcheck
+
+# Python verification script cache.
+__pycache__/
+*.py[cod]
