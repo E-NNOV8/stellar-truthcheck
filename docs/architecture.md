@@ -16,7 +16,7 @@ Canonical committed SAC transfers + ETL movement claims
                                   └─ exact multiset comparison ──> PASS / FAIL / UNKNOWN
 ```
 
-The CLI lives in `main.go`; behavior and adversarial cases are in `main_test.go`. It uses `github.com/stellar/go-stellar-sdk v0.8.0`. Amounts are converted to integer stroops; floating-point comparison is not used.
+The command-line entry point and report formatting live in `main.go`. Shared evidence types are in `model.go`; ETL decoding and input validation are in `etl_input.go`; ledger and committed transfer interpretation are in `canonical.go`; exact amount and asset normalization are in `amounts.go`; movement comparison is in `compare.go`. Real and adversarial behavior cases are in `main_test.go`. The code uses `github.com/stellar/go-stellar-sdk v0.8.0`. Amounts are converted to integer stroops; floating-point comparison is not used.
 
 ## Identity and execution semantics
 

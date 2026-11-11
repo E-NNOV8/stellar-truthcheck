@@ -16,7 +16,7 @@ From the repository root:
 ```sh
 go mod download
 go mod verify
-test -z "$(gofmt -l main.go main_test.go)"
+test -z "$(gofmt -l *.go)"
 go vet ./...
 go test -count=1 ./...
 go build -trimpath -buildvcs=false -o ./dist/truthcheck .

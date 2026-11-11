@@ -32,7 +32,7 @@ jobs:
 
       - name: Check Go formatting
         run: |
-          unformatted="$(gofmt -l main.go main_test.go)"
+          unformatted="$(gofmt -l *.go)"
           if [ -n "$unformatted" ]; then
             printf 'Go files need gofmt:\n%s\n' "$unformatted"
             exit 1
