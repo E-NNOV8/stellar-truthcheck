@@ -8,12 +8,14 @@ It is a small, offline Go CLI for developers and data engineers who need to chec
 
 For one invoke-host-function operation record, Truthcheck:
 
-1. Reads base64 `LedgerCloseMeta` XDR and a Stellar ETL operation-output JSON bundle.
+1. Reads `LedgerCloseMeta` (base64, raw XDR, RPC JSON, or Galexie zstd batch) and a Stellar ETL operation-output JSON bundle.
 2. Checks the selected ledger and transaction identity using the supplied network passphrase, header hash, transaction-set commitment, and transaction-result-set commitment.
 3. Reads transaction success from the canonical transaction result and supported SAC `transfer` events from committed operation metadata (`TransactionMeta` v4).
 4. Compares exact asset identity, source, destination, amount, direction, and multiplicity with ETL `asset_balance_changes`.
 
 Current support is limited to `LedgerCloseMeta` v1/v2, `TransactionMeta` v4, and the implemented invoke-host-function/SAC transfer schema. See [known limitations](docs/KNOWN_LIMITATIONS.md) and [architecture](docs/architecture.md).
+
+**Checking your own output?** Follow the [complete input-to-verdict workflow](docs/WORKFLOW.md): public historical metadata or retained RPC data → one original ETL operation → `truthcheck prepare` → verification → next action. The guide explains operator access, exact row selection, wrapper fields, and an additional real-ledger demonstration. Preparation preserves ETL movement claims; it does not generate them from canonical events.
 
 ## Build and run
 
@@ -22,7 +24,7 @@ Requires Go 1.26.10. From the repository root:
 ```sh
 go mod download
 go mod verify
-go build -o ./truthcheck .
+go build -buildvcs=false -o ./truthcheck .
 go install -buildvcs=false .
 ```
 
