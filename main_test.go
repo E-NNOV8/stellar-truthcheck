@@ -305,3 +305,16 @@ func TestEvidenceFilesAreDistinctAndPresent(t *testing.T) {
 		}
 	}
 }
+
+func TestMalformedMovementMissingSourceYieldsUnknown(t *testing.T) {
+	badMovement := ExportMovement{
+		Type: "transfer",
+		From: "", // missing from
+		To:   "destination_account",
+		Amount: "100.0000000",
+	}
+	report := compareTransfers(true, []ExportMovement{badMovement}, []ExportMovement{})
+	if report.Status != "UNKNOWN" {
+		t.Fatalf("expected UNKNOWN status for malformed movement, got %+v", report)
+	}
+}
