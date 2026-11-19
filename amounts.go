@@ -53,6 +53,17 @@ func parseExportStroops(s string) (int64, error) {
 	return whole.Int64(), nil
 }
 
+// FormatStroopsToDecimal converts an exact integer stroop amount to a canonical 7-decimal string.
+// Rejects zero or negative stroops.
+func FormatStroopsToDecimal(stroops int64) (string, error) {
+	if stroops <= 0 {
+		return "", fmt.Errorf("stroop amount must be strictly positive: %d", stroops)
+	}
+	whole := stroops / 10_000_000
+	frac := stroops % 10_000_000
+	return fmt.Sprintf("%d.%07d", whole, frac), nil
+}
+
 func canonicalStroops(raw string) (int64, error) {
 	v, ok := new(big.Int).SetString(raw, 10)
 	if !ok || !v.IsInt64() || v.Sign() <= 0 {
