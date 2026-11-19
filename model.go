@@ -1,5 +1,7 @@
 package main
 
+import "encoding/json"
+
 const sdkVersion = "github.com/stellar/go-stellar-sdk v0.8.0"
 
 type ExportMovement struct {
@@ -67,3 +69,18 @@ type EvidenceReport struct {
 }
 
 func unknown(reason string) EvidenceReport { return EvidenceReport{Status: "UNKNOWN", Reason: reason} }
+
+// ToJSON serializes the EvidenceReport to indented JSON.
+func (r EvidenceReport) ToJSON() ([]byte, error) {
+	return json.MarshalIndent(r, "", "  ")
+}
+
+// IsPass returns true if the verification status is PASS.
+func (r EvidenceReport) IsPass() bool {
+	return r.Status == "PASS"
+}
+
+// IsFail returns true if the verification status is FAIL.
+func (r EvidenceReport) IsFail() bool {
+	return r.Status == "FAIL"
+}
