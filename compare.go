@@ -62,6 +62,25 @@ func DiffMovements(canonical, exported []ExportMovement) MovementDiff {
 	return diff
 }
 
+// FilterMovements filters a slice of ExportMovement by asset code and/or issuer.
+// An empty code or issuer matches all values for that attribute.
+func FilterMovements(movements []ExportMovement, code, issuer string) []ExportMovement {
+	if code == "" && issuer == "" {
+		return movements
+	}
+	var filtered []ExportMovement
+	for _, m := range movements {
+		if code != "" && m.AssetCode != code {
+			continue
+		}
+		if issuer != "" && m.AssetIssuer != issuer {
+			continue
+		}
+		filtered = append(filtered, m)
+	}
+	return filtered
+}
+
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
 	for _, m := range exported {
 		if _, err := makeMovementKey(m); err != nil {
