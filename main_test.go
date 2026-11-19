@@ -344,3 +344,33 @@ func TestFormatStroopsRejectsZeroAndNegative(t *testing.T) {
 		t.Fatal("expected error for negative stroops, got nil")
 	}
 }
+
+func TestDiffMovementsDiscrepancies(t *testing.T) {
+	m1 := transfer("10.0000000", "GAAA", "GBBB")
+	m2 := transfer("25.0000000", "GBBB", "GCCC")
+	m3 := transfer("5.0000000", "GCCC", "GDDD")
+
+	// Canonical has m1, m2; ETL only has m1 -> m2 is missing in ETL
+	diff1 := DiffMovements([]ExportMovement{m1, m2}, []ExportMovement{m1})
+	if len(diff1.MissingInETL) != 1 || diff1.MissingInETL[0].Amount != "25.0000000" {
+		t.Fatalf("expected m2 missing in ETL, got %+v", diff1.MissingInETL)
+	}
+	if len(diff1.SurplusInETL) != 0 {
+		t.Fatalf("expected no surplus in ETL, got %+v", diff1.SurplusInETL)
+	}
+
+	// Canonical has m1; ETL has m1 and m3 -> m3 is surplus in ETL
+	diff2 := DiffMovements([]ExportMovement{m1}, []ExportMovement{m1, m3})
+	if len(diff2.SurplusInETL) != 1 || diff2.SurplusInETL[0].Amount != "5.0000000" {
+		t.Fatalf("expected m3 surplus in ETL, got %+v", diff2.SurplusInETL)
+	}
+	if len(diff2.MissingInETL) != 0 {
+		t.Fatalf("expected no missing in ETL, got %+v", diff2.MissingInETL)
+	}
+
+	// Identical sets -> no diff
+	diff3 := DiffMovements([]ExportMovement{m1, m2}, []ExportMovement{m2, m1})
+	if len(diff3.MissingInETL) != 0 || len(diff3.SurplusInETL) != 0 {
+		t.Fatalf("expected empty diff for identical movements, got %+v", diff3)
+	}
+}
