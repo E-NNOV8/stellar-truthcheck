@@ -14,6 +14,54 @@ func sameCounts(a, b map[movementKey]int) bool {
 	return true
 }
 
+// MovementDiff captures the asymmetric set difference between canonical and ETL movements.
+type MovementDiff struct {
+	MissingInETL []ExportMovement `json:"missing_in_etl,omitempty"`
+	SurplusInETL []ExportMovement `json:"surplus_in_etl,omitempty"`
+}
+
+// DiffMovements calculates the difference between canonical committed movements and ETL balance changes.
+func DiffMovements(canonical, exported []ExportMovement) MovementDiff {
+	canonCounts := make(map[movementKey]int)
+	exportCounts := make(map[movementKey]int)
+	canonMap := make(map[movementKey]ExportMovement)
+	exportMap := make(map[movementKey]ExportMovement)
+
+	for _, m := range canonical {
+		k, err := makeMovementKey(m)
+		if err == nil {
+			canonCounts[k]++
+			canonMap[k] = m
+		}
+	}
+	for _, m := range exported {
+		k, err := makeMovementKey(m)
+		if err == nil {
+			exportCounts[k]++
+			exportMap[k] = m
+		}
+	}
+
+	var diff MovementDiff
+	for k, cCount := range canonCounts {
+		eCount := exportCounts[k]
+		if cCount > eCount {
+			for i := 0; i < cCount-eCount; i++ {
+				diff.MissingInETL = append(diff.MissingInETL, canonMap[k])
+			}
+		}
+	}
+	for k, eCount := range exportCounts {
+		cCount := canonCounts[k]
+		if eCount > cCount {
+			for i := 0; i < eCount-cCount; i++ {
+				diff.SurplusInETL = append(diff.SurplusInETL, exportMap[k])
+			}
+		}
+	}
+	return diff
+}
+
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
 	for _, m := range exported {
 		if _, err := makeMovementKey(m); err != nil {
