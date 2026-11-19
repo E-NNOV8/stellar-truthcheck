@@ -374,3 +374,29 @@ func TestDiffMovementsDiscrepancies(t *testing.T) {
 		t.Fatalf("expected empty diff for identical movements, got %+v", diff3)
 	}
 }
+
+func TestFilterMovementsByAssetAndIssuer(t *testing.T) {
+	mUSDC := ExportMovement{AssetCode: "USDC", AssetIssuer: "G_USDC", Amount: "100.0000000"}
+	mEURC := ExportMovement{AssetCode: "EURC", AssetIssuer: "G_EURC", Amount: "50.0000000"}
+	mCustom := ExportMovement{AssetCode: "USDC", AssetIssuer: "G_OTHER", Amount: "25.0000000"}
+
+	list := []ExportMovement{mUSDC, mEURC, mCustom}
+
+	// Filter by code only
+	usdcList := FilterMovements(list, "USDC", "")
+	if len(usdcList) != 2 {
+		t.Fatalf("expected 2 USDC movements, got %d", len(usdcList))
+	}
+
+	// Filter by code and issuer
+	exactList := FilterMovements(list, "USDC", "G_USDC")
+	if len(exactList) != 1 || exactList[0].Amount != "100.0000000" {
+		t.Fatalf("expected 1 exact USDC movement, got %+v", exactList)
+	}
+
+	// Filter with empty criteria returns all
+	allList := FilterMovements(list, "", "")
+	if len(allList) != 3 {
+		t.Fatalf("expected 3 movements with empty filter, got %d", len(allList))
+	}
+}
