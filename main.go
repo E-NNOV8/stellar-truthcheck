@@ -25,6 +25,8 @@ func run(args []string, stdout io.Writer) int {
 	passphrase := fs.String("network-passphrase", "", "network identity used to derive Stellar transaction hashes")
 	txHash := fs.String("transaction-hash", "", "transaction hash to verify")
 	etlRevision := fs.String("etl-source-revision", "", "provenance label only; not used for verdict")
+	verbose := fs.Bool("verbose", false, "log step-by-step transfer comparison details")
+	fs.BoolVar(verbose, "v", false, "shorthand for -verbose")
 	fs.Usage = func() {
 		fmt.Fprintln(stdout, "Usage: truthcheck [options]\n       truthcheck prepare --help\nOffline supported SAC transfer comparison. See docs/WORKFLOW.md for input sources and preparation.")
 		fs.SetOutput(stdout)
@@ -68,6 +70,9 @@ func run(args []string, stdout io.Writer) int {
 		return writeReport(stdout, unknown("ETL bundle has no target or control record; for an original Stellar ETL operation object, use truthcheck prepare --help"))
 	}
 	report := verify(lcm, bundle, strings.ToLower(*txHash), *passphrase)
+	if *verbose {
+		fmt.Fprintf(os.Stderr, "[verbose] Verification complete: status=%s canonical=%d etl=%d\n", report.Status, len(report.CanonicalMovements), len(report.ExportMovements))
+	}
 	report.LedgerEvidencePath, _ = filepath.Abs(*ledgerPath)
 	report.LedgerEvidenceSHA256 = sha256Hex(ledgerRaw)
 	report.ETLEvidencePath, _ = filepath.Abs(*etlPath)
