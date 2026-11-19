@@ -400,3 +400,53 @@ func TestFilterMovementsByAssetAndIssuer(t *testing.T) {
 		t.Fatalf("expected 3 movements with empty filter, got %d", len(allList))
 	}
 }
+
+func TestEvidenceReportJSONAndStatusHelpers(t *testing.T) {
+	passReport := EvidenceReport{Status: "PASS", Reason: "matched"}
+	failReport := EvidenceReport{Status: "FAIL", Reason: "mismatch"}
+	unknownReport := unknown("missing data")
+
+	if !passReport.IsPass() || passReport.IsFail() {
+		t.Fatalf("expected passReport to be Pass and not Fail")
+	}
+	if !failReport.IsFail() || failReport.IsPass() {
+		t.Fatalf("expected failReport to be Fail and not Pass")
+	}
+	if unknownReport.IsPass() || unknownReport.IsFail() {
+		t.Fatalf("expected unknownReport to neither be Pass nor Fail")
+	}
+
+	raw, err := passReport.ToJSON()
+	if err != nil {
+		t.Fatalf("failed to serialize report to JSON: %v", err)
+	}
+	var decoded EvidenceReport
+	if err := json.Unmarshal(raw, &decoded); err != nil {
+		t.Fatalf("failed to deserialize report JSON: %v", err)
+	}
+	if decoded.Status != "PASS" || decoded.Reason != "matched" {
+		t.Fatalf("unexpected decoded report: %+v", decoded)
+	}
+}
+
+func TestCliVerboseFlagWithValidExecution(t *testing.T) {
+	var out bytes.Buffer
+	args := []string{
+		"--ledger-meta", ledgerPath,
+		"--etl-output", etlPath,
+		"--transaction-hash", targetHash,
+		"--network-passphrase", mainnetPassphrase,
+		"-v",
+	}
+	code := run(args, &out)
+	if code != 2 {
+		t.Fatalf("expected exit code 2 (FAIL), got %d", code)
+	}
+	var rep EvidenceReport
+	if err := json.Unmarshal(out.Bytes(), &rep); err != nil {
+		t.Fatalf("stdout is not valid JSON with -v flag: %v (output: %s)", err, out.String())
+	}
+	if rep.Status != "FAIL" {
+		t.Fatalf("expected status FAIL, got %s", rep.Status)
+	}
+}
