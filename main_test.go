@@ -318,3 +318,29 @@ func TestMalformedMovementMissingSourceYieldsUnknown(t *testing.T) {
 		t.Fatalf("expected UNKNOWN status for malformed movement, got %+v", report)
 	}
 }
+
+func TestFormatStroopsToDecimalRoundtrip(t *testing.T) {
+	testValues := []int64{1, 10, 5000000, 10000000, 1250000000, 999999999999}
+	for _, v := range testValues {
+		str, err := FormatStroopsToDecimal(v)
+		if err != nil {
+			t.Fatalf("unexpected error formatting %d: %v", v, err)
+		}
+		parsed, err := parseExportStroops(str)
+		if err != nil {
+			t.Fatalf("unexpected error parsing %s (from %d): %v", str, v, err)
+		}
+		if parsed != v {
+			t.Fatalf("roundtrip mismatch: expected %d, got %d (string %s)", v, parsed, str)
+		}
+	}
+}
+
+func TestFormatStroopsRejectsZeroAndNegative(t *testing.T) {
+	if _, err := FormatStroopsToDecimal(0); err == nil {
+		t.Fatal("expected error for zero stroops, got nil")
+	}
+	if _, err := FormatStroopsToDecimal(-500); err == nil {
+		t.Fatal("expected error for negative stroops, got nil")
+	}
+}
