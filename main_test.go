@@ -482,4 +482,24 @@ func TestExportMovementsCSV(t *testing.T) {
 	}
 }
 
+func TestFilterMovementsByMinAmount(t *testing.T) {
+	dust := transfer("0.0000001", "GA", "GB")    // 1 stroop
+	normal := transfer("10.0000000", "GA", "GB") // 100,000,000 stroops
+	movements := []ExportMovement{dust, normal}
+
+	filtered := FilterMovementsByMinAmount(movements, 1_000_000)
+	if len(filtered) != 1 {
+		t.Fatalf("expected 1 movement after dust filtering, got %d", len(filtered))
+	}
+	if filtered[0].Amount != "10.0000000" {
+		t.Fatalf("expected 10.0000000, got %s", filtered[0].Amount)
+	}
+
+	all := FilterMovementsByMinAmount(movements, 0)
+	if len(all) != 2 {
+		t.Fatalf("expected 2 movements with zero threshold, got %d", len(all))
+	}
+}
+
+
 
