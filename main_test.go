@@ -469,3 +469,17 @@ func TestSummarizeMovements(t *testing.T) {
 	}
 }
 
+func TestExportMovementsCSV(t *testing.T) {
+	m := transfer("10.0000000", "GA", "GB")
+	csv := ExportMovementsCSV([]ExportMovement{m})
+	expectedHeader := "from,to,amount,asset_type,asset_code,asset_issuer\n"
+	if !strings.HasPrefix(csv, expectedHeader) {
+		t.Fatalf("expected CSV to start with header, got %q", csv)
+	}
+	expectedRow := "GA,GB,10.0000000,credit_alphanum4,USDC,GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN\n"
+	if !strings.Contains(csv, expectedRow) {
+		t.Fatalf("expected CSV to contain row %q, got %q", expectedRow, csv)
+	}
+}
+
+
