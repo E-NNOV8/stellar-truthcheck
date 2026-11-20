@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func sameCounts(a, b map[movementKey]int) bool {
 	if len(a) != len(b) {
@@ -111,6 +114,17 @@ func SummarizeMovements(movements []ExportMovement) (TransferSummary, error) {
 		UniqueAccounts: len(accounts),
 	}, nil
 }
+
+// ExportMovementsCSV formats movements as a CSV string.
+func ExportMovementsCSV(movements []ExportMovement) string {
+	var b strings.Builder
+	b.WriteString("from,to,amount,asset_type,asset_code,asset_issuer\n")
+	for _, m := range movements {
+		fmt.Fprintf(&b, "%s,%s,%s,%s,%s,%s\n", m.From, m.To, m.Amount, m.AssetType, m.AssetCode, m.AssetIssuer)
+	}
+	return b.String()
+}
+
 
 
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
