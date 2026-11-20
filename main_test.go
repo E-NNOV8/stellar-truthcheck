@@ -450,3 +450,22 @@ func TestCliVerboseFlagWithValidExecution(t *testing.T) {
 		t.Fatalf("expected status FAIL, got %s", rep.Status)
 	}
 }
+
+func TestSummarizeMovements(t *testing.T) {
+	m1 := transfer("10.0000000", "GA", "GB")
+	m2 := transfer("5.5000000", "GB", "GC")
+	summary, err := SummarizeMovements([]ExportMovement{m1, m2})
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if summary.MovementCount != 2 {
+		t.Fatalf("expected 2 movements, got %d", summary.MovementCount)
+	}
+	if summary.TotalStroops != 155_000_000 {
+		t.Fatalf("expected 155000000 stroops, got %d", summary.TotalStroops)
+	}
+	if summary.UniqueAccounts != 3 {
+		t.Fatalf("expected 3 unique accounts (GA, GB, GC), got %d", summary.UniqueAccounts)
+	}
+}
+
