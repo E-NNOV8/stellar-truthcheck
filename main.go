@@ -25,6 +25,7 @@ func run(args []string, stdout io.Writer) int {
 	passphrase := fs.String("network-passphrase", "", "network identity used to derive Stellar transaction hashes")
 	txHash := fs.String("transaction-hash", "", "transaction hash to verify")
 	etlRevision := fs.String("etl-source-revision", "", "provenance label only; not used for verdict")
+	threshold := fs.Int64("threshold", 0, "optional minimum transfer amount in stroops to include in verified movements")
 	verbose := fs.Bool("verbose", false, "log step-by-step transfer comparison details")
 	fs.BoolVar(verbose, "v", false, "shorthand for -verbose")
 	fs.Usage = func() {
@@ -70,6 +71,10 @@ func run(args []string, stdout io.Writer) int {
 		return writeReport(stdout, unknown("ETL bundle has no target or control record; for an original Stellar ETL operation object, use truthcheck prepare --help"))
 	}
 	report := verify(lcm, bundle, strings.ToLower(*txHash), *passphrase)
+	if *threshold > 0 {
+		report.CanonicalMovements = FilterMovementsByMinAmount(report.CanonicalMovements, *threshold)
+		report.ExportMovements = FilterMovementsByMinAmount(report.ExportMovements, *threshold)
+	}
 	if *verbose {
 		fmt.Fprintf(os.Stderr, "[verbose] Verification complete: status=%s canonical=%d etl=%d\n", report.Status, len(report.CanonicalMovements), len(report.ExportMovements))
 	}
