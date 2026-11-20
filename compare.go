@@ -81,6 +81,38 @@ func FilterMovements(movements []ExportMovement, code, issuer string) []ExportMo
 	return filtered
 }
 
+// TransferSummary aggregates total stroops volume and unique participant counts.
+type TransferSummary struct {
+	TotalStroops   int64 `json:"total_stroops"`
+	MovementCount  int   `json:"movement_count"`
+	UniqueAccounts int   `json:"unique_accounts"`
+}
+
+// SummarizeMovements computes aggregated transfer metrics for a slice of movements.
+func SummarizeMovements(movements []ExportMovement) (TransferSummary, error) {
+	accounts := make(map[string]struct{})
+	var total int64
+	for _, m := range movements {
+		stroops, err := parseExportStroops(m.Amount)
+		if err != nil {
+			return TransferSummary{}, err
+		}
+		total += stroops
+		if m.From != "" {
+			accounts[m.From] = struct{}{}
+		}
+		if m.To != "" {
+			accounts[m.To] = struct{}{}
+		}
+	}
+	return TransferSummary{
+		TotalStroops:   total,
+		MovementCount:  len(movements),
+		UniqueAccounts: len(accounts),
+	}, nil
+}
+
+
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
 	for _, m := range exported {
 		if _, err := makeMovementKey(m); err != nil {
