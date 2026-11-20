@@ -125,6 +125,22 @@ func ExportMovementsCSV(movements []ExportMovement) string {
 	return b.String()
 }
 
+// FilterMovementsByMinAmount returns only movements with amount >= minStroops.
+func FilterMovementsByMinAmount(movements []ExportMovement, minStroops int64) []ExportMovement {
+	if minStroops <= 0 {
+		return movements
+	}
+	var out []ExportMovement
+	for _, m := range movements {
+		s, err := parseExportStroops(m.Amount)
+		if err == nil && s >= minStroops {
+			out = append(out, m)
+		}
+	}
+	return out
+}
+
+
 
 
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
