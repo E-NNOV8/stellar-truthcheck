@@ -501,5 +501,28 @@ func TestFilterMovementsByMinAmount(t *testing.T) {
 	}
 }
 
+func TestCliThresholdFlag(t *testing.T) {
+	var out bytes.Buffer
+	args := []string{
+		"--ledger-meta", ledgerPath,
+		"--etl-output", etlPath,
+		"--transaction-hash", targetHash,
+		"--network-passphrase", mainnetPassphrase,
+		"--threshold", "20000000000000",
+	}
+	code := run(args, &out)
+	if code != 2 {
+		t.Fatalf("expected exit code 2 (FAIL), got %d", code)
+	}
+	var rep EvidenceReport
+	if err := json.Unmarshal(out.Bytes(), &rep); err != nil {
+		t.Fatalf("stdout is not valid JSON: %v", err)
+	}
+	if len(rep.ExportMovements) != 0 {
+		t.Fatalf("expected 0 export movements with huge threshold, got %d", len(rep.ExportMovements))
+	}
+}
+
+
 
 
