@@ -140,9 +140,6 @@ func FilterMovementsByMinAmount(movements []ExportMovement, minStroops int64) []
 	return out
 }
 
-
-
-
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
 	for _, m := range exported {
 		if _, err := makeMovementKey(m); err != nil {

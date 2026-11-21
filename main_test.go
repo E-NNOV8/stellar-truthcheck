@@ -308,9 +308,9 @@ func TestEvidenceFilesAreDistinctAndPresent(t *testing.T) {
 
 func TestMalformedMovementMissingSourceYieldsUnknown(t *testing.T) {
 	badMovement := ExportMovement{
-		Type: "transfer",
-		From: "", // missing from
-		To:   "destination_account",
+		Type:   "transfer",
+		From:   "", // missing from
+		To:     "destination_account",
 		Amount: "100.0000000",
 	}
 	report := compareTransfers(true, []ExportMovement{badMovement}, []ExportMovement{})
@@ -522,7 +522,3 @@ func TestCliThresholdFlag(t *testing.T) {
 		t.Fatalf("expected 0 export movements with huge threshold, got %d", len(rep.ExportMovements))
 	}
 }
-
-
-
-
