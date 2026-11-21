@@ -522,3 +522,21 @@ func TestCliThresholdFlag(t *testing.T) {
 		t.Fatalf("expected 0 export movements with huge threshold, got %d", len(rep.ExportMovements))
 	}
 }
+
+func TestMockBundlePairFixture(t *testing.T) {
+	fixturePath := filepath.Join("examples", "fixtures", "mock_bundle_pair.json")
+	data, err := os.ReadFile(fixturePath)
+	if err != nil {
+		t.Fatalf("read mock_bundle_pair.json: %v", err)
+	}
+	var bundle ETLBundle
+	if err := json.Unmarshal(data, &bundle); err != nil {
+		t.Fatalf("unmarshal mock_bundle_pair: %v", err)
+	}
+	if bundle.LedgerSequence != 1234567 {
+		t.Fatalf("expected ledger_sequence 1234567, got %d", bundle.LedgerSequence)
+	}
+	if bundle.Target == nil || bundle.Target.OperationType != "payment" {
+		t.Fatalf("expected target operation_type payment")
+	}
+}
