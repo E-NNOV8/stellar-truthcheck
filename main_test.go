@@ -540,3 +540,30 @@ func TestMockBundlePairFixture(t *testing.T) {
 		t.Fatalf("expected target operation_type payment")
 	}
 }
+
+func TestValidateAssetIssuer(t *testing.T) {
+	// Native asset with no issuer -> ok
+	if err := ValidateAssetIssuer("", "native"); err != nil {
+		t.Fatalf("native asset should not error with empty issuer: %v", err)
+	}
+	// Native asset with issuer -> err
+	if err := ValidateAssetIssuer("GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5", "native"); err == nil {
+		t.Fatalf("native asset with issuer should error")
+	}
+
+	// Valid 56-char G... public key -> ok
+	validIssuer := "GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5"
+	if err := ValidateAssetIssuer(validIssuer, "credit_alphanum4"); err != nil {
+		t.Fatalf("valid issuer should not error: %v", err)
+	}
+
+	// Invalid prefix
+	if err := ValidateAssetIssuer("CBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5", "credit_alphanum4"); err == nil {
+		t.Fatalf("expected error for non-G prefix")
+	}
+
+	// Invalid length
+	if err := ValidateAssetIssuer("GBBD47", "credit_alphanum4"); err == nil {
+		t.Fatalf("expected error for short issuer")
+	}
+}
