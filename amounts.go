@@ -102,3 +102,22 @@ func makeMovementKey(m ExportMovement) (movementKey, error) {
 func formatStroops(amount int64) string {
 	return fmt.Sprintf("%d.%07d", amount/10_000_000, amount%10_000_000)
 }
+
+// ValidateAssetIssuer verifies that the asset issuer is well-formed for credit assets.
+func ValidateAssetIssuer(issuer, assetType string) error {
+	if assetType == "native" {
+		if issuer != "" {
+			return errors.New("native asset cannot have an issuer")
+		}
+		return nil
+	}
+	if len(issuer) != 56 || !strings.HasPrefix(issuer, "G") {
+		return fmt.Errorf("invalid asset issuer public key length or prefix: %q", issuer)
+	}
+	for _, c := range issuer {
+		if (c < 'A' || c > 'Z') && (c < '2' || c > '7') {
+			return fmt.Errorf("invalid base32 character in asset issuer: %c", c)
+		}
+	}
+	return nil
+}
