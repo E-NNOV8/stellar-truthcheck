@@ -567,3 +567,37 @@ func TestValidateAssetIssuer(t *testing.T) {
 		t.Fatalf("expected error for short issuer")
 	}
 }
+
+func TestFormatMarkdownScorecard(t *testing.T) {
+	rep := EvidenceReport{
+		Status:         "PASS",
+		Reason:         "canonical and ETL records agree",
+		LedgerSequence: 1234567,
+		CanonicalMovements: []ExportMovement{
+			{Amount: "100.0000000", From: "ALICE", To: "BOB"},
+		},
+		ExportMovements: []ExportMovement{
+			{Amount: "100.0000000", From: "ALICE", To: "BOB"},
+		},
+	}
+	md := rep.FormatMarkdownScorecard()
+	if !strings.Contains(md, "# Stellar TruthCheck Verification Scorecard") {
+		t.Fatalf("scorecard missing header: %s", md)
+	}
+	if !strings.Contains(md, "- **Status**: PASS") {
+		t.Fatalf("scorecard missing status: %s", md)
+	}
+	if !strings.Contains(md, "- **Canonical Transfers**: 1") {
+		t.Fatalf("scorecard missing transfers count: %s", md)
+	}
+
+	guidePath := filepath.Join("docs", "CLI_GUIDE.md")
+	data, err := os.ReadFile(guidePath)
+	if err != nil {
+		t.Fatalf("read CLI_GUIDE.md: %v", err)
+	}
+	guideStr := string(data)
+	if !strings.Contains(guideStr, "Stellar TruthCheck Offline Verification Guide") {
+		t.Fatalf("CLI guide missing title")
+	}
+}
