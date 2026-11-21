@@ -1,6 +1,10 @@
 package main
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+	"strings"
+)
 
 const sdkVersion = "github.com/stellar/go-stellar-sdk v0.8.0"
 
@@ -83,4 +87,18 @@ func (r EvidenceReport) IsPass() bool {
 // IsFail returns true if the verification status is FAIL.
 func (r EvidenceReport) IsFail() bool {
 	return r.Status == "FAIL"
+}
+
+// FormatMarkdownScorecard formats the verification report into a markdown summary scorecard.
+func (r EvidenceReport) FormatMarkdownScorecard() string {
+	var sb strings.Builder
+	sb.WriteString("# Stellar TruthCheck Verification Scorecard\n\n")
+	sb.WriteString(fmt.Sprintf("- **Status**: %s\n", r.Status))
+	if r.Reason != "" {
+		sb.WriteString(fmt.Sprintf("- **Reason**: %s\n", r.Reason))
+	}
+	sb.WriteString(fmt.Sprintf("- **Ledger Sequence**: %d\n", r.LedgerSequence))
+	sb.WriteString(fmt.Sprintf("- **Canonical Transfers**: %d\n", len(r.CanonicalMovements)))
+	sb.WriteString(fmt.Sprintf("- **ETL Balance Changes**: %d\n", len(r.ExportMovements)))
+	return sb.String()
 }
