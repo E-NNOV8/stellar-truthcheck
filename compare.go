@@ -140,6 +140,41 @@ func FilterMovementsByMinAmount(movements []ExportMovement, minStroops int64) []
 	return out
 }
 
+// ValidateMemo verifies that a transaction memo complies with the Stellar memo specification.
+func ValidateMemo(memoType, memoValue string) error {
+	switch strings.ToLower(memoType) {
+	case "", "none":
+		if memoValue != "" {
+			return fmt.Errorf("memo type %q must have empty value", memoType)
+		}
+		return nil
+	case "text":
+		if len(memoValue) > 28 {
+			return fmt.Errorf("text memo exceeds max 28 bytes: got %d bytes", len(memoValue))
+		}
+		return nil
+	case "id":
+		var id uint64
+		_, err := fmt.Sscanf(memoValue, "%d", &id)
+		if err != nil {
+			return fmt.Errorf("invalid id memo, expected unsigned integer: %w", err)
+		}
+		return nil
+	case "hash", "return":
+		if len(memoValue) != 64 {
+			return fmt.Errorf("%s memo must be 64-char hex string (32 bytes), got %d chars", memoType, len(memoValue))
+		}
+		for _, c := range memoValue {
+			if (c < '0' || c > '9') && (c < 'a' || c > 'f') && (c < 'A' || c > 'F') {
+				return fmt.Errorf("invalid hex character in %s memo: %c", memoType, c)
+			}
+		}
+		return nil
+	default:
+		return fmt.Errorf("unrecognized memo type %q", memoType)
+	}
+}
+
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
 	for _, m := range exported {
 		if _, err := makeMovementKey(m); err != nil {
