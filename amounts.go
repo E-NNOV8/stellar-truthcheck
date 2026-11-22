@@ -121,3 +121,16 @@ func ValidateAssetIssuer(issuer, assetType string) error {
 	}
 	return nil
 }
+
+// FilterMovementsByAsset returns only movements matching the specified asset code.
+func FilterMovementsByAsset(movements []ExportMovement, assetCode string) []ExportMovement {
+	var out []ExportMovement
+	for _, m := range movements {
+		if assetCode == "native" && m.AssetType == "native" {
+			out = append(out, m)
+		} else if m.AssetCode == assetCode {
+			out = append(out, m)
+		}
+	}
+	return out
+}
