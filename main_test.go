@@ -674,3 +674,26 @@ func TestFormatSARIF(t *testing.T) {
 		t.Fatalf("expected error level for FAIL status")
 	}
 }
+
+func TestFilterMovementsByAsset(t *testing.T) {
+	movements := []ExportMovement{
+		{AssetType: "native", Amount: "10.0000000", From: "ALICE", To: "BOB"},
+		{AssetType: "credit_alphanum4", AssetCode: "USDC", Amount: "50.0000000", From: "ALICE", To: "BOB"},
+		{AssetType: "credit_alphanum4", AssetCode: "EURC", Amount: "30.0000000", From: "BOB", To: "CHARLIE"},
+	}
+
+	nativeOnly := FilterMovementsByAsset(movements, "native")
+	if len(nativeOnly) != 1 || nativeOnly[0].AssetType != "native" {
+		t.Fatalf("expected 1 native movement, got %d", len(nativeOnly))
+	}
+
+	usdcOnly := FilterMovementsByAsset(movements, "USDC")
+	if len(usdcOnly) != 1 || usdcOnly[0].AssetCode != "USDC" {
+		t.Fatalf("expected 1 USDC movement, got %d", len(usdcOnly))
+	}
+
+	nonExistent := FilterMovementsByAsset(movements, "BTC")
+	if len(nonExistent) != 0 {
+		t.Fatalf("expected 0 BTC movements, got %d", len(nonExistent))
+	}
+}
