@@ -649,3 +649,28 @@ func TestValidateMemo(t *testing.T) {
 		t.Fatalf("expected error for unrecognized memo type")
 	}
 }
+
+func TestFormatSARIF(t *testing.T) {
+	rep := EvidenceReport{
+		Status:         "FAIL",
+		Reason:         "ledger movement divergence detected",
+		LedgerSequence: 54321,
+	}
+	data, err := rep.FormatSARIF()
+	if err != nil {
+		t.Fatalf("FormatSARIF failed: %v", err)
+	}
+	sarifStr := string(data)
+	if !strings.Contains(sarifStr, "sarif-schema-2.1.0.json") {
+		t.Fatalf("missing sarif schema reference")
+	}
+	if !strings.Contains(sarifStr, `"version": "2.1.0"`) {
+		t.Fatalf("missing sarif version")
+	}
+	if !strings.Contains(sarifStr, `"ruleId": "truthcheck/ledger-parity"`) {
+		t.Fatalf("missing ruleId")
+	}
+	if !strings.Contains(sarifStr, `"level": "error"`) {
+		t.Fatalf("expected error level for FAIL status")
+	}
+}
