@@ -102,3 +102,52 @@ func (r EvidenceReport) FormatMarkdownScorecard() string {
 	sb.WriteString(fmt.Sprintf("- **ETL Balance Changes**: %d\n", len(r.ExportMovements)))
 	return sb.String()
 }
+
+// FormatSARIF exports the verification result as a SARIF v2.1.0 compliant JSON report.
+func (r EvidenceReport) FormatSARIF() ([]byte, error) {
+	level := "note"
+	if r.Status == "FAIL" {
+		level = "error"
+	} else if r.Status == "UNKNOWN" {
+		level = "warning"
+	}
+
+	ruleID := "truthcheck/ledger-parity"
+	message := fmt.Sprintf("Stellar TruthCheck %s: %s", r.Status, r.Reason)
+	if r.Reason == "" {
+		message = fmt.Sprintf("Stellar TruthCheck %s for ledger %d", r.Status, r.LedgerSequence)
+	}
+
+	report := map[string]interface{}{
+		"$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+		"version": "2.1.0",
+		"runs": []map[string]interface{}{
+			{
+				"tool": map[string]interface{}{
+					"driver": map[string]interface{}{
+						"name":           "stellar-truthcheck",
+						"version":        "1.0.0",
+						"informationUri": "https://github.com/E-NNOV8/stellar-truthcheck",
+						"rules": []map[string]interface{}{
+							{
+								"id":   ruleID,
+								"name": "LedgerParityValidation",
+								"shortDescription": map[string]string{
+									"text": "Stellar canonical vs ETL balance change equivalence check",
+								},
+							},
+						},
+					},
+				},
+				"results": []map[string]interface{}{
+					{
+						"ruleId":  ruleID,
+						"level":   level,
+						"message": map[string]string{"text": message},
+					},
+				},
+			},
+		},
+	}
+	return json.MarshalIndent(report, "", "  ")
+}
