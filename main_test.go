@@ -601,3 +601,51 @@ func TestFormatMarkdownScorecard(t *testing.T) {
 		t.Fatalf("CLI guide missing title")
 	}
 }
+
+func TestValidateMemo(t *testing.T) {
+	// None
+	if err := ValidateMemo("none", ""); err != nil {
+		t.Fatalf("valid none memo failed: %v", err)
+	}
+	if err := ValidateMemo("none", "something"); err == nil {
+		t.Fatalf("expected error for non-empty none memo")
+	}
+
+	// Text
+	if err := ValidateMemo("text", "hello stellar"); err != nil {
+		t.Fatalf("valid text memo failed: %v", err)
+	}
+	if err := ValidateMemo("text", "this memo is definitely way longer than twenty eight bytes limit"); err == nil {
+		t.Fatalf("expected error for long text memo")
+	}
+
+	// ID
+	if err := ValidateMemo("id", "1234567890"); err != nil {
+		t.Fatalf("valid id memo failed: %v", err)
+	}
+	if err := ValidateMemo("id", "not-a-number"); err == nil {
+		t.Fatalf("expected error for non-numeric id memo")
+	}
+
+	// Hash
+	validHash := "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+	if err := ValidateMemo("hash", validHash); err != nil {
+		t.Fatalf("valid hash memo failed: %v", err)
+	}
+	if err := ValidateMemo("hash", "short-hash"); err == nil {
+		t.Fatalf("expected error for short hash memo")
+	}
+	if err := ValidateMemo("hash", "0123456789abcdef0123456789abcdef0123456789abcdef0123456789zzzzzz"); err == nil {
+		t.Fatalf("expected error for non-hex hash memo")
+	}
+
+	// Return
+	if err := ValidateMemo("return", validHash); err != nil {
+		t.Fatalf("valid return memo failed: %v", err)
+	}
+
+	// Unknown
+	if err := ValidateMemo("invalid_type", "data"); err == nil {
+		t.Fatalf("expected error for unrecognized memo type")
+	}
+}
