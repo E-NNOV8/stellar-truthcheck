@@ -175,6 +175,39 @@ func ValidateMemo(memoType, memoValue string) error {
 	}
 }
 
+// BatchVerificationSummary aggregates PASS/FAIL/UNKNOWN counts across a multi-transaction ledger batch.
+type BatchVerificationSummary struct {
+	Total   int `json:"total"`
+	Passed  int `json:"passed"`
+	Failed  int `json:"failed"`
+	Unknown int `json:"unknown"`
+}
+
+// VerifyTransferBatch compares paired canonical and ETL movement slices across multiple transactions.
+func VerifyTransferBatch(successFlags []bool, canonicalBatch, exportedBatch [][]ExportMovement) BatchVerificationSummary {
+	n := len(successFlags)
+	if len(canonicalBatch) < n {
+		n = len(canonicalBatch)
+	}
+	if len(exportedBatch) < n {
+		n = len(exportedBatch)
+	}
+	var summary BatchVerificationSummary
+	summary.Total = n
+	for i := 0; i < n; i++ {
+		rep := compareTransfers(successFlags[i], canonicalBatch[i], exportedBatch[i])
+		switch rep.Status {
+		case "PASS":
+			summary.Passed++
+		case "FAIL":
+			summary.Failed++
+		default:
+			summary.Unknown++
+		}
+	}
+	return summary
+}
+
 func compareTransfers(successful bool, canonical, exported []ExportMovement) EvidenceReport {
 	for _, m := range exported {
 		if _, err := makeMovementKey(m); err != nil {
