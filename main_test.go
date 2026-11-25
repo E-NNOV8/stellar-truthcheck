@@ -697,3 +697,21 @@ func TestFilterMovementsByAsset(t *testing.T) {
 		t.Fatalf("expected 0 BTC movements, got %d", len(nonExistent))
 	}
 }
+
+func TestVerifyTransferBatchAggregation(t *testing.T) {
+	m := ExportMovement{
+		Type:      "transfer",
+		AssetType: "native",
+		From:      "GAAA",
+		To:        "GBBB",
+		Amount:    "10.0000000",
+	}
+	summary := VerifyTransferBatch(
+		[]bool{true, false},
+		[][]ExportMovement{{m}, {}},
+		[][]ExportMovement{{m}, {m}},
+	)
+	if summary.Total != 2 || summary.Passed != 1 || summary.Failed != 1 {
+		t.Fatalf("unexpected batch summary: %+v", summary)
+	}
+}
